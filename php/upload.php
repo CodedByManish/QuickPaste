@@ -3,14 +3,14 @@ header('Content-Type: application/json');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'], $_POST['id'])) {
     $id = preg_replace('/[^a-zA-Z0-9]/', '', $_POST['id']); // sanitize
-    $uploadDir = realpath(__DIR__ . '/../') . '/'; // htdocs/
+    $uploadDir = '../DB/file/';
 
     $ext = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
     $filename = "$id.$ext";
     $targetPath = $uploadDir . $filename;
 
     if (!is_dir($uploadDir)) {
-        mkdir($uploadDir, 0777, true);  // normally root folder already exists
+        mkdir($uploadDir, 0777, true);
     }
 
     if (file_exists($targetPath)) {
