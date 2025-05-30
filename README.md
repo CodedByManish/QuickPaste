@@ -42,9 +42,9 @@ BCAPaste/
 * ⏳ **Expiry Options**:
 
   * Never
-  * 1 Hour
   * 1 Day
   * 1 Week
+  * 1 Month
 
 ---
 

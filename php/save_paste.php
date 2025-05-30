@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'], $_POST['id
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>BCANiggaPaste</title>
-    <link rel="icon" href="images/logo.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="images/logo.png" type="image/png" sizes="20*20">
     <style>
         body {
         background-color: #0a0a0a;
@@ -39,6 +39,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'], $_POST['id
         font-family: 'Consolas', monospace;
         padding: 20px;
         margin: 0;
+        }
+
+       .logo-container {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 20px;
+        }
+
+        .logo-container img {
+        width: 64px;
+        height: 64px;
+        filter: drop-shadow(0 0 5px #0ff);
+        }
+
+        .brand-title {
+        color: #0ff;
+        background: linear-gradient(90deg, #ff0000, #0000ff, #00ff00);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-family: 'Fira Code', 'Courier New', Courier, monospace;
+        font-size: 1.8rem;
+        text-shadow: 0 0 2px #0ff;
+        margin-top: 14px;
+        margin-left:3px;
+        display: flex;
+        gap: 4px;
         }
 
         .editor-frame {
@@ -71,13 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'], $_POST['id
         background: #1e1e1e;
         border-top: none;
         padding: 20px;
+        padding-right: 30px;
         color: #d4d4d4;
-        white-space: pre-wrap;
-        overflow-wrap: break-word;
-        background-image: url('../images/logo.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
+        white-space: nowrap;
+        overflow-x: auto;
         }
 
         .container::before {
@@ -95,7 +119,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'], $_POST['id
     </style>
     </head>
     <body>
-    <h1 style="text-align:center; text-shadow: 0 0 8px #0ff;">Paste ID: $id</h1>
+
+    <div class="logo-container">
+        <img src="../images/logo.png" alt="Logo" />
+        <h1 class="brand-title">
+            <span class="bca">BCA</span><span class="nigga">Nigga</span><span class="paste">Paste</span>
+        </h1>
+    </div>
+    <h3 style="text-align:center; margin:0;  text-shadow: 0 0 4px #0ff; ">Paste ID: $id</h3>
 
     <div class="editor-frame">
         <div class="editor-header">
