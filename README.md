@@ -1,50 +1,47 @@
-# 📝 BCAPaste
+# 📘 QuickPaste
+**Fast. Minimal. Secure.** *Instantly share text, files, and links — zero friction, maximum speed.*
 
-A lightweight and powerful web app built using **HTML**, **Tailwind CSS**, **JavaScript**, and **PHP**. BCAPaste enables users to:
+ [![Live Demo](https://img.shields.io/badge/Demo-Live%20Now-brightgreen?style=for-the-badge&logo=google-chrome&logoColor=white)](https://quickpaste.kesug.com/)
+ [![PHP](https://img.shields.io/badge/PHP-7.4+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://www.php.net/)
+ [![TailwindCSS](https://img.shields.io/badge/Tailwind-3.0-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 
-* ✍️ Paste and share formatted text
-* 📤 Upload files (max 100MB)
-* 🔗 Shorten URLs with custom expiry settings
+---
+## 🚀 Overview
+
+**QuickPaste** is a lightweight utility designed for developers and power users who need to move data across devices without the bloat of accounts or databases.
+
+### 🧩 Core Features
+- **✍️ Smart Text Sharing:** Rich text support with instant unique links.
+- **📂 File Hosting:** Support for uploads up to **100MB** with built-in previews.
+- **🔗 URL Shortener:** Clean routing and instant redirection.
+- **🎯 Performance:** No database required; uses a high-speed file-based system.
 
 ---
 
 ## 📁 Folder Structure
 
 ```bash
-BCAPaste/
-├── index.html
-├── style.css
-├── script.js
-├── php/
-│   ├── save_paste.php
-│   ├── shorten_url.php
-│   ├── upload.php
-│   ├── s/
-│   │   ├── .htaccess
-│   │   └── index.php
-├── image/
+quickpaste/
+├── 🗄️ DB/            # File-based storage system
+├── ⚙️ php/           # Logic (Save/Upload/Shorten)
+├── 📦 includes/      # Layout (Header/Footer)
+├── 🎨 assets/        # Frontend (CSS/JS)
+└── 📄 index.php      # Main entry point
 ```
+---
+## 🖼️ Preview
+| 🏠 Homepage | 📄 Paste View | 📁 File Preview |
+| :--- | :--- | :--- |
+| ![Home](./assets/demo/text.png) | ![Paste](./assets/demo/file.png) | ![File](./assets/demo/s-url.png) |
 
 ---
 
 ## ⚙️ Requirements
+- PHP 7.0+
+- Apache Server (XAMPP / CPanel)
+- `.htaccess` support enabled
 
-* 🆓 Free PHP Hosting (e.g., [InfinityFree](https://www.infinityfree.net))
-* 🐘 PHP 7.0+
 
----
-
-## 🧩 Key Features
-
-* 🖋️ **Rich Text Editor**: Bold, Italic, Underline formatting
-* 📂 **File Uploads**: Upload files up to 100MB
-* 🔗 **URL Shortener**: Short links with expiry settings
-* ⏳ **Expiry Options**:
-
-  * Never
-  * 1 Day
-  * 1 Week
-  * 1 Month
 
 ---
 
@@ -64,7 +61,7 @@ BCAPaste/
    // Example in save_paste.php
    $baseUrl = 'https://niggapaste.kesug.com';
    ```
-4. Launch `index.html` in your browser and test the app.
+4. Launch `index.php` in your browser and test the app.
 
 ---
 
@@ -77,9 +74,9 @@ BCAPaste/
 
 ## 🔗 Example Links
 
-* 📄 Paste: [`https://niggapaste.kesug.com/textid`](https://niggapaste.kesug.com/textid)
-* 📁 File: [`https://niggapaste.kesug.com/filename`](https://niggapaste.kesug.com/filename)
-* 🔗 Short URL: [`https://niggapaste.kesug.com/shortlink`](https://niggapaste.kesug.com/shortlink)
+* 📄 Paste: https://quickpaste.kesug.com/abc123
+* 📁 File: https://quickpaste.kesug.com/file123.png
+* 🔗 Short URL: https://quickpaste.kesug.com/xyz789
 
 ---
 
@@ -93,4 +90,4 @@ BCAPaste/
 
 ---
 
-Built  for the BCA-Nigga-Team.
+Built  for the **@CodedByManish**
