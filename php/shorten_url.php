@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['url'], $_POST['id']))
         exit;
     }
 
-    $shortUrl = "https://niggapaste.kesug.com/$id";
+    $shortUrl = "https://quickpaste.kesug.com/$id";
 
     $data = json_encode([
         'original_url' => $originalUrl,
