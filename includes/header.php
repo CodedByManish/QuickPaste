@@ -7,7 +7,7 @@
     <meta name="description" content="<?= $pageDescription ?? 'Share text, files, or URLs quickly and securely.' ?>">
     <meta name="keywords" content="quick paste, text sharing, file upload, URL shortener, developer tool,paste code online, private text sharing">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="<?= $canonicalUrl ?? 'https://quickpaste.in' ?>">
+    <link rel="canonical" href="<?= $canonicalUrl ?? 'https://quickpaste.kesug.com/' ?>">
     
     <!-- Open Graph and Twitter (can also be made dynamic with PHP vars) -->
     <meta property="og:title" content="<?= $ogTitle ?? 'QuickPaste - Fast & Secure Text Sharing' ?>">
@@ -32,7 +32,7 @@
         "@context": "https://schema.org",
         "@type": "WebSite",
         "name": "QuickPaste",
-        "url": "https://quickpaste.in"
+        "url": "https://quickpaste.kesug.com/"
     }
     </script>
 </head>
