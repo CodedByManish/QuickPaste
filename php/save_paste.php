@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'], $_POST['id
 
     echo json_encode([
         'success' => true,
-        'url' => "niggapaste.kesug.com/$id"
+        'url' => "quickpaste.kesug.com/$id"
     ]);
 } else {
     echo json_encode(['success' => false, 'error' => 'Missing content or ID']);
