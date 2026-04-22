@@ -30,9 +30,9 @@
                 <div>
                     <h3 class="text-white text-sm font-semibold mb-4 text-blue-400">Connect</h3>
                     <div class="flex space-x-6 text-lg">
-                        <a href="https://linkedin.com/company/example" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://x.com/example" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:contact@example.com"><i class="fas fa-envelope"></i></a>
+                        <a href="#" onclick="return false;" class="opacity-60 cursor-not-allowed" title="LinkedIn coming soon"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" onclick="return false;" class="opacity-60 cursor-not-allowed" title="X (Twitter) coming soon"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:quickpaste.in@gmail.com" title="Contact us"><i class="fas fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
