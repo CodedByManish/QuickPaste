@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['file'], $_POST['id']
     if (move_uploaded_file($_FILES['file']['tmp_name'], $targetPath)) {
         echo json_encode([
             'success' => true,
-            'url' => "https://niggapaste.kesug.com/$filename"
+            'url' => "https://quickpaste.kesug.com/$filename"
         ]);
     } else {
         echo json_encode(['success' => false, 'error' => 'Upload failed']);
