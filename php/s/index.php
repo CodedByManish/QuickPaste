@@ -1,16 +1,22 @@
 <?php
 
-$id = $_GET['id'] ?? '';
-$id = preg_replace('/[^a-zA-Z0-9]/', '', $id);
+if (!isset($_GET['id'])) {
+    http_response_code(400);
+    echo "Invalid request";
+    exit;
+}
 
-$file = __DIR__ . '/../DB/s-url/' . $id . '.txt';
+$id = preg_replace('/[^a-zA-Z0-9]/', '', $_GET['id']);
 
-if (file_exists($file)) {
+// FIXED PATH
+$path = realpath(__DIR__ . '/../../DB/s-url/') . "/$id.txt";
 
-    $data = json_decode(file_get_contents($file), true);
+if ($path && file_exists($path)) {
 
-    if (isset($data['original_url'])) {
-        header("Location: " . $data['original_url'], true, 302);
+    $data = json_decode(file_get_contents($path), true);
+
+    if (!empty($data['original_url'])) {
+        header("Location: " . $data['original_url'], true, 301);
         exit;
     }
 }
