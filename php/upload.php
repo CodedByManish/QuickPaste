@@ -95,7 +95,7 @@ HTML;
 
         } elseif ($lowerExt === 'pdf') {
 
-            $htmlTemplate .= "<iframe src='/$filename' class='w-full h-[500px] rounded'></iframe>";
+            $htmlTemplate .= "<iframe src='/$filename' class='w-full rounded' style='height: 80vh;'></iframe>";
 
         } elseif (in_array($lowerExt, ['mp4','webm'])) {
 
