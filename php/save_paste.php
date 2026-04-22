@@ -28,117 +28,52 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['content'], $_POST['id
     <!DOCTYPE html>
     <html lang="en">
     <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>BCANiggaPaste</title>
-    <link rel="icon" href="images/logo.png" type="image/png" sizes="20*20">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paste $id - QuickPaste</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="icon" href="/assets/images/icon.png">
+    
     <style>
-        body {
-        background-color: #0a0a0a;
-        color: #0ff;
-        font-family: 'Consolas', monospace;
-        padding: 20px;
-        margin: 0;
-        }
-
-       .logo-container {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        margin-bottom: 20px;
-        }
-
-        .logo-container img {
-        width: 64px;
-        height: 64px;
-        filter: drop-shadow(0 0 5px #0ff);
-        }
-
-        .brand-title {
-        color: #0ff;
-        background: linear-gradient(90deg, #ff0000, #0000ff, #00ff00);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-family: 'Fira Code', 'Courier New', Courier, monospace;
-        font-size: 1.8rem;
-        text-shadow: 0 0 2px #0ff;
-        margin-top: 14px;
-        margin-left:3px;
-        display: flex;
-        gap: 4px;
-        }
-
-        .editor-frame {
-        max-width: 900px;
-        margin: 30px auto;
-        border-radius: 10px;
-        box-shadow: 0 0 15px #0ff;
-        overflow: hidden;
-        }
-
-        .editor-header {
-        background-color: #2d2d2d;
-        padding: 10px;
-        display: flex;
-        gap: 8px;
-        }
-
-        .circle {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        }
-
-        .red { background-color: #ff5f56; }
-        .yellow { background-color: #ffbd2e; }
-        .green { background-color: #27c93f; }
-
-        .container {
-        position: relative;
-        background: #1e1e1e;
-        border-top: none;
-        padding: 20px;
-        padding-right: 30px;
-        color: #d4d4d4;
-        white-space: nowrap;
-        overflow-x: auto;
-        }
-
-        .container::before {
-        content: "";
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background-color: rgba(30, 30, 30, 0.85); /* dark overlay for readability */
-        z-index: 0;
-        }
-
-        pre {
-        position: relative;
-        z-index: 1;
-        }
+    body { background-color: #111827; }
+    pre { white-space: pre-wrap; word-wrap: break-word; }
     </style>
+    
     </head>
-    <body>
-
-    <div class="logo-container">
-        <img src="../images/logo.png" alt="Logo" />
-        <h1 class="brand-title">
-            <span class="bca">BCA</span><span class="nigga">Nigga</span><span class="paste">Paste</span>
-        </h1>
-    </div>
-    <h3 style="text-align:center; margin:0;  text-shadow: 0 0 4px #0ff; ">Paste ID: $id</h3>
-
-    <div class="editor-frame">
-        <div class="editor-header">
-        <div class="circle red"></div>
-        <div class="circle yellow"></div>
-        <div class="circle green"></div>
+    <body class="text-gray-200">
+    
+    <header class="bg-gray-800 shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3 flex items-center">
+            <img src="/assets/images/logo.png" class="h-10 mr-2">
+            <h1 class="text-2xl font-bold text-blue-400">Quick<span class="text-gray-300">Paste</span></h1>
         </div>
-
-        <div class="container">
-        <pre>$content</pre>
+    </header>
+    
+    <main class="container mx-auto px-4 py-8">
+    
+    <h2 class="text-xl text-blue-400 mb-4 text-center">Paste ID: $id</h2>
+    
+    <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+    
+        <div class="bg-gray-700 px-4 py-2 flex gap-2">
+            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
+            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
+    
+        <div class="p-5 bg-gray-900 overflow-x-auto">
+            <pre>$content</pre>
+        </div>
+    
     </div>
+    
+    </main>
+    
+    <footer class="text-center text-gray-500 text-sm py-6">
+        © 2026 QuickPaste
+    </footer>
+    
     </body>
     </html>
     HTML;
