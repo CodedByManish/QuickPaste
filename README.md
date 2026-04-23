@@ -30,9 +30,10 @@ quickpaste/
 ```
 ---
 ## 🖼️ Preview
-| 🏠 Homepage | 📄 Paste View | 📁 File Preview |
-| :--- | :--- | :--- |
-| ![Home](./assets/demo/text.png) | ![Paste](./assets/demo/file.png) | ![File](./assets/demo/s-url.png) |
+
+| 📝 Text | 📁 File | 🔗 S-URL |
+| :---: | :---: | :---: |
+| ![txt-in](./assets/demo/txt-in.png)<br>![txt-out](./assets/demo/txt-out.png) | ![file-in](./assets/demo/file-in.png)<br>![file-out](./assets/demo/file-out.png) | ![surl](./assets/demo/surl.png) |
 
 ---
 
