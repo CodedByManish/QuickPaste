@@ -33,8 +33,7 @@ quickpaste/
 
 | 📝 Text | 📁 File | 🔗 S-URL |
 | :---: | :---: | :---: |
-| ![txt-in](./assets/demo/txt-in.png)<br>![txt-out](./assets/demo/txt-out.png) | ![file-in](./assets/demo/file-in.png)<br>![file-out](./assets/demo/file-out.png) | ![surl](./assets/demo/surl.png) |
-
+| **Input**<br>![txt-in](./assets/demo/txt-in.png)<br>**Output**<br>![txt-out](./assets/demo/txt-out.png) | **Input**<br>![file-in](./assets/demo/file-in.png)<br><br>**Output**<br>![file-out](./assets/demo/file-out.png) | **Input**<br>![surl](./assets/demo/surl.png)<br><br><br>**Output**<br> <small> [Load the url and redirect to the original link[ </small> |
 ---
 
 ## ⚙️ Requirements
