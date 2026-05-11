@@ -21,12 +21,20 @@
 ## 📁 Folder Structure
 
 ```bash
-quickpaste/
-├── 🗄️ DB/            # File-based storage system
-├── ⚙️ php/           # Logic (Save/Upload/Shorten)
-├── 📦 includes/      # Layout (Header/Footer)
-├── 🎨 assets/        # Frontend (CSS/JS)
-└── 📄 index.php      # Main entry point
+QuickPaste/
+├── core/                
+│   ├── database.php     <-- Database connection & Table creation
+│   └── seo.php          <-- SEO Logic (Already provided)
+├── public/              
+│   ├── assets/ (js, css, images)
+│   ├── includes/ (header.php, footer.php)
+│   ├── index.php        <-- Your main UI
+│   ├── view.php         <-- NEW: One file to display ALL pastes/files
+│   └── s.php            <-- NEW: Handles all short URLs
+├── DB/                  <-- Secure folder for SQLite and Uploads
+│   ├── uploads/         <-- Physical files (images/pdfs)
+│   └── quickpaste.db    <-- The Database file
+└── .htaccess            <-- NEW: Makes URLs pretty (quickpaste.com/xyz)
 ```
 ---
 ## 🖼️ Preview
