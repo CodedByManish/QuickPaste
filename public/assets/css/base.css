@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    transition: background-color 0.3s ease;
+    font-family: 'Fredoka', cursive;
+    background-image: url('../images/bg-pattern.png');
+    background-attachment: fixed;
+    background-color: rgba(13, 17, 23, 0.6);
+    color: #e5e7eb;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #2d3748; border-radius: 10px; }
+::-webkit-scrollbar-thumb { background: #4a5568; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: #718096; }
