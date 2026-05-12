@@ -1,33 +1,85 @@
 <?php
-// Default SEO values
-$siteName = "QuickPaste";
-$baseUrl = "https://quickpaste.kesug.com/";
 
-// Page-specific overrides or defaults
-$pageTitle = $pageTitle ?? 'QuickPaste - Fast & Secure Text Sharing';
-$pageDesc  = $pageDesc  ?? 'Share text, files, or URLs quickly and securely without registration.';
-$canonical = $canonical ?? $baseUrl . basename($_SERVER['PHP_SELF']);
-$ogImage   = $ogImage   ?? $baseUrl . "assets/images/og-image.png";
+function get_seo_metadata($pageType = 'website', $data = [])
+{
+    $siteName   = "QuickPaste";
+    $baseUrl    = "https://quickpaste.kesug.com";
+    $currentUrl = $baseUrl . $_SERVER['REQUEST_URI'];
 
+    $defaults = [
+        'title'       => "QuickPaste - Fast, Secure Text Sharing & File Hosting",
+        'description' => "QuickPaste is a fast and secure Pastebin alternative for sharing code snippets, text, files up to 100MB, and shortened URLs instantly.",
+        'image'       => "https://quickpaste.kesug.com/assets/images/og-main.png",
+        'keywords'    => "QuickPaste, pastebin alternative, share code online, secure paste, file hosting, url shortener, developer tools, online code sharing",
+        'author'      => "QuickPaste",
+        'robots'      => "index, follow",
+        'theme_color' => "#0f172a"
+    ];
 
-function render_seo_tags($title, $desc, $canonical, $ogImage, $siteName) {
-    echo '' . PHP_EOL;
-    echo '<title>' . htmlspecialchars($title) . '</title>' . PHP_EOL;
-    echo '<meta name="description" content="' . htmlspecialchars($desc) . '">' . PHP_EOL;
-    echo '<link rel="canonical" href="' . htmlspecialchars($canonical) . '">' . PHP_EOL;
+    $meta = array_merge($defaults, $data);
 
-    echo '' . PHP_EOL;
-    echo '<meta property="og:type" content="website">' . PHP_EOL;
-    echo '<meta property="og:url" content="' . htmlspecialchars($canonical) . '">' . PHP_EOL;
-    echo '<meta property="og:title" content="' . htmlspecialchars($title) . '">' . PHP_EOL;
-    echo '<meta property="og:description" content="' . htmlspecialchars($desc) . '">' . PHP_EOL;
-    echo '<meta property="og:image" content="' . htmlspecialchars($ogImage) . '">' . PHP_EOL;
+    $title       = htmlspecialchars($meta['title'], ENT_QUOTES, 'UTF-8');
+    $description = htmlspecialchars($meta['description'], ENT_QUOTES, 'UTF-8');
+    $keywords    = htmlspecialchars($meta['keywords'], ENT_QUOTES, 'UTF-8');
+    $image       = htmlspecialchars($meta['image'], ENT_QUOTES, 'UTF-8');
 
-    echo '' . PHP_EOL;
-    echo '<meta property="twitter:card" content="summary_large_image">' . PHP_EOL;
-    echo '<meta property="twitter:url" content="' . htmlspecialchars($canonical) . '">' . PHP_EOL;
-    echo '<meta property="twitter:title" content="' . htmlspecialchars($title) . '">' . PHP_EOL;
-    echo '<meta property="twitter:description" content="' . htmlspecialchars($desc) . '">' . PHP_EOL;
-    echo '<meta property="twitter:image" content="' . htmlspecialchars($ogImage) . '">' . PHP_EOL;
+    echo PHP_EOL;
+
+    echo "<title>{$title}</title>" . PHP_EOL;
+
+    echo "<meta charset='UTF-8'>" . PHP_EOL;
+    echo "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" . PHP_EOL;
+
+    echo "<meta name='title' content='{$title}'>" . PHP_EOL;
+    echo "<meta name='description' content='{$description}'>" . PHP_EOL;
+    echo "<meta name='keywords' content='{$keywords}'>" . PHP_EOL;
+    echo "<meta name='author' content='{$meta['author']}'>" . PHP_EOL;
+    echo "<meta name='robots' content='{$meta['robots']}'>" . PHP_EOL;
+    echo "<meta name='theme-color' content='{$meta['theme_color']}'>" . PHP_EOL;
+
+    echo "<link rel='canonical' href='{$currentUrl}'>" . PHP_EOL;
+
+    echo "<meta property='og:type' content='{$pageType}'>" . PHP_EOL;
+    echo "<meta property='og:site_name' content='{$siteName}'>" . PHP_EOL;
+    echo "<meta property='og:url' content='{$currentUrl}'>" . PHP_EOL;
+    echo "<meta property='og:title' content='{$title}'>" . PHP_EOL;
+    echo "<meta property='og:description' content='{$description}'>" . PHP_EOL;
+    echo "<meta property='og:image' content='{$image}'>" . PHP_EOL;
+    echo "<meta property='og:image:alt' content='{$title}'>" . PHP_EOL;
+    echo "<meta property='og:locale' content='en_US'>" . PHP_EOL;
+
+    echo "<meta name='twitter:card' content='summary_large_image'>" . PHP_EOL;
+    echo "<meta name='twitter:url' content='{$currentUrl}'>" . PHP_EOL;
+    echo "<meta name='twitter:title' content='{$title}'>" . PHP_EOL;
+    echo "<meta name='twitter:description' content='{$description}'>" . PHP_EOL;
+    echo "<meta name='twitter:image' content='{$image}'>" . PHP_EOL;
+
+    echo "<meta name='apple-mobile-web-app-capable' content='yes'>" . PHP_EOL;
+    echo "<meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>" . PHP_EOL;
+    echo "<meta http-equiv='X-UA-Compatible' content='IE=edge'>" . PHP_EOL;
+
+    $schema = [
+        "@context" => "https://schema.org",
+        "@type" => "WebApplication",
+        "name" => $siteName,
+        "url" => $baseUrl,
+        "description" => $meta['description'],
+        "applicationCategory" => "DeveloperApplication",
+        "operatingSystem" => "All",
+        "browserRequirements" => "Requires JavaScript",
+        "image" => $meta['image'],
+        "author" => [
+            "@type" => "Organization",
+            "name" => "QuickPaste"
+        ],
+        "offers" => [
+            "@type" => "Offer",
+            "price" => "0",
+            "priceCurrency" => "USD"
+        ]
+    ];
+
+    echo "<script type='application/ld+json'>"
+        . json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT)
+        . "</script>" . PHP_EOL;
 }
-?>

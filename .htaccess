@@ -7,3 +7,9 @@ RewriteRule ^ - [L]
 
 # Handle short URLs
 RewriteRule ^([a-zA-Z0-9]+)$ php/view.php?id=$1 [L,QSA]
+
+
+RewriteRule ^about$ about.php [L]
+RewriteRule ^privacy$ privacy.php [L]
+RewriteRule ^terms$ terms.php [L]
+RewriteRule ^contact$ contact.php [L]
