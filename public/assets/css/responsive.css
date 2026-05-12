@@ -1,14 +1,21 @@
 @media (max-width: 640px) {
     .container { padding-left: 0.5rem; padding-right: 0.5rem; }
+    .feature-card { margin-bottom: 0.75rem; }
     h1 { font-size: 1.5rem; }
     .tabs { flex-wrap: wrap; }
+    .editor-toolbar { justify-content: center; }
 }
 
 @media (max-width: 768px) {
     #feature-cards-container.show-mobile {
         display: flex;
         overflow-x: auto;
+        padding-bottom: 1rem;
         scroll-snap-type: x mandatory;
         gap: 1rem;
+    }
+    #feature-cards-container.show-mobile .feature-card {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
     }
 }
