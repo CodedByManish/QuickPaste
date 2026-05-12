@@ -2,16 +2,39 @@
     backdrop-filter: blur(12px);
     background-color: rgba(22, 27, 34, 0.7);
     border: 1px solid rgba(59, 130, 246, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(59, 130, 246, 0.1);
     transition: all 0.3s ease;
     border-radius: 12px;
 }
 
-#editor {
-    background-color: #1f2937;
-    color: #f9fafb;
-    border-radius: 0 0 0.5rem 0.5rem;
+.glassmorphism:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(59, 130, 246, 0.2);
+    border-color: rgba(59, 130, 246, 0.4);
 }
+
+.bg-white, .dark .bg-gray-800 { animation: fadeIn 0.6s ease-out; }
+
+.feature-card {
+    animation: fadeIn 0.6s ease-out;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: linear-gradient(60deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+    transform: rotate(30deg);
+    transition: transform 0.6s;
+}
+
+.feature-card:hover::before { transform: rotate(30deg) translate(50%, 50%); }
+
+h1, h2, h3 { text-shadow: 0 0 3px rgba(59, 130, 246, 0.3); }
 
 .bg-blue-600 {
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
@@ -19,8 +42,20 @@
     animation: gradientShift 8s ease infinite;
 }
 
-.feature-card {
-    animation: fadeIn 0.6s ease-out;
+#editor {
+    background-color: #1f2937;
+    color: #f9fafb;
+    border-radius: 0 0 0.5rem 0.5rem;
     transition: all 0.3s ease;
-    overflow: hidden;
 }
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.pulse-btn:hover::before { animation: pulse 1.5s ease-in-out infinite; }
+
+.tip-card:hover { transform: translateX(5px); }
+
+.tab-btn.active { color: #60a5fa; border-bottom: 2px solid #60a5fa; }
