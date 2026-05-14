@@ -26,8 +26,8 @@ QuickPaste/
 │   ├── database.php     <-- Database connection & Table creation
 │   └── seo.php          <-- SEO Logic (Already provided)
 ├── public/              
-│   ├── assets/ (js, css, images)
-│   ├── includes/ (header.php, footer.php)
+│   ├── assets/      (js, css, images)
+│   ├── includes/    (header.php, footer.php)
 │   ├── index.php        <-- Your main UI
 │   ├── view.php         <-- NEW: One file to display ALL pastes/files
 │   └── s.php            <-- NEW: Handles all short URLs
@@ -41,7 +41,7 @@ QuickPaste/
 
 | 📝 Text | 📁 File | 🔗 S-URL |
 | :---: | :---: | :---: |
-| **Input**<br>![txt-in](./assets/demo/txt-in.png)<br>**Output**<br>![txt-out](./assets/demo/txt-out.png) | **Input**<br>![file-in](./assets/demo/file-in.png)<br><br>**Output**<br>![file-out](./assets/demo/file-out.png) | **Input**<br>![surl](./assets/demo/surl.png)<br><br><br>**Output**<br> <small> [Load the url and redirect to the original link[ </small> |
+| **Input**<br>![txt-in](public/assets/demo/txt-in.png)<br>**Output**<br>![txt-out](public/assets/demo/txt-out.png) | **Input**<br>![file-in](public/assets/demo/file-in.png)<br><br>**Output**<br>![file-out](public/assets/demo/file-out.png) | **Input**<br>![surl](public/assets/demo/surl.png)<br><br><br>**Output**<br> <small> [Load the url and redirect to the original link[ </small> |
 ---
 
 ## ⚙️ Requirements
@@ -67,7 +67,7 @@ QuickPaste/
 
    ```php
    // Example in save_paste.php
-   $baseUrl = 'https://niggapaste.kesug.com';
+   $baseUrl = 'https://quickpaste.kesug.com';
    ```
 4. Launch `index.php` in your browser and test the app.
 

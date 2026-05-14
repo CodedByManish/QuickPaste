@@ -17,8 +17,8 @@ Thumbs.db
 *.swp
 
 # Ignore XAMPP folders
-/htdocs/NiggaPaste/DB/
-/htdocs/NiggaPaste/vendor/
+quickPaste/DB/
+quickPaste/vendor/
 
 # Ignore compiled PHP files
 *.phar
