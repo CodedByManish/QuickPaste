@@ -16,9 +16,6 @@ Thumbs.db
 *.bak
 *.swp
 
-# Ignore XAMPP folders
-quickPaste/DB/
+DB/
 quickPaste/vendor/
-
-# Ignore compiled PHP files
 *.phar
